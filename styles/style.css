@@ -1,0 +1,36 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General Styling */
+.navbar{
+    padding: 0;
+}
+footer{
+    text-align: center;
+}
+
+/* Index Styling */
+.welcome{
+    text-align: center;
+}
+
+/* Landing Page Styling */
+.logo{
+    width: 5rem;
+    padding-left: 3%;
+}
+.main {
+    display: flex;
+}
+.information img{
+    width: 30rem;
+}
+.information p{
+    width: 90%;
+}
+
