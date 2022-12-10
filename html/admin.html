@@ -61,6 +61,101 @@
             <tbody></tbody>
         </table>
     </div>
+   
+    <button type="button" class="addition btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Add
+      </button>
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Add</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="insert">
+                    <label for="productName">Product Name:</label>
+                    <select id="productName" name="productName" required>
+                        <option placeholder=""  disabled selected hidden>Select</option>
+                        <option value="Toilet's Secrets">Toilet's Secrets</option>
+                        <option value="Lunch Box Pack">Lunch Box Pack</option>
+                        <option value="Hand Bag with Cla$$">Hand Bag with Cla$$</option>
+                        <option value="With Laces">With Laces</option>
+                        <option value="Bags a Dozen">Bags a Dozen</option>
+                        <option value="I'm Shy">I'm Shy</option>
+                        <option value="In the Shadows">In the Shadows</option>
+                        <option value="My Lash">My Lash</option>
+                        <option value="Kit Kat">Kit Kat</option>
+                        <option value="Eyelines">Eyelines</option>
+                        <option value="I Smell Like a Queen">I Smell Like a Queen</option>
+                        <option value="Pink Secret">Pink Secret</option>
+                        <option value="Soft Skin">Soft Skin</option>
+                        <option value="Shhhhhh">Shhhhhh</option>
+                        <option value="Stick with me">Stick with me</option>
+                        <option value="Bombshell Forever">Bombshell Forever</option>
+                        <option value="Bombshell Intense">Bombshell Intense</option>
+                        <option value="Bombshell Passion">Bombshell Passion</option>
+                        <option value="Love Spell">Love Spell</option>
+                        <option value="Very Sexy">Very Sexy</option>
+                        <option value="Violet Lily">Violet Lily</option>
+                        <option value="Carribean">Carribean</option>
+                        <option value="Vickie">Vickie</option>
+                        <option value="One Step Closer">One Step Closer</option>
+                        <option value="Snowfall">Snowfall</option>
+                        <option value="Two Pieces to Puzzle">Two Pieces to Puzzle</option>
+                        <option value="Twos and Blues">Twos and Blues</option>
+                    </select>
+                    <label for="productName">URL:</label>
+                    <select id="url" name="url" required>
+                        <option placeholder=""  disabled selected hidden>Select</option>
+                        <option value="../Bags/hand bag.jpg">Toilet's Secrets</option>
+                        <option value="../Bags/make up bag.jpg">Lunch Box Pack</option>
+                        <option value="../Bags/purse.jpg">Hand Bag with Cla$$</option>
+                        <option value="../Bags/travel case.jpg">With Laces</option>
+                        <option value="../Bags/VS Bags.jpg">Bags a Dozen</option>
+                        <option value="../Cosmetics/Blush.jpg">I'm Shy</option>
+                        <option value="../Cosmetics/Eye Shadow.jfif">In the Shadows</option>
+                        <option value="../Cosmetics/eyelashes.jfif">My Lash</option>
+                        <option value="../Cosmetics/makeup kit.jfif">Kit Kat</option>
+                        <option value="../Cosmetics/Mascara.jfif">Eyelines</option>
+                        <option value="../Cosmetics/phagrance.jpeg">I Smell Like a Queen</option>
+                        <option value="../Cosmetics/Pink secret.jpg">Pink Secret</option>
+                        <option value="../Cosmetics/pure lotion.jpg">Soft Skin</option>
+                        <option value="../Cosmetics/Scandalous.jpg">Shhhhhh</option>
+                        <option value="../Cosmetics/Velvel Matte.jpg">Stick with me</option>
+                        <option value="../Perfumes/Bombshell Forever.jpeg">Bombshell Forever</option>
+                        <option value="../Perfumes/Bombshell Intense.jpg">Bombshell Intense</option>
+                        <option value="../Perfumes/Bombshell Passion.jpg">Bombshell Passion</option>
+                        <option value="../Perfumes/Love Spell.jfif">Love Spell</option>
+                        <option value="../Perfumes/Very Sexy.jpg">Very Sexy</option>
+                        <option value="../Perfumes/Violet lily.jpg">Violet Lily</option>
+                        <option value="../Underwear/carribean.jpg">Carribean</option>
+                        <option value="../Underwear/Elle.jpg">Vickie</option>
+                        <option value="../Underwear/red velvet.jpg">One Step Closer</option>
+                        <option value="../Underwear/Snow.jpg">Snowfall</option>
+                        <option value="../Underwear/Two piece snow.jpg">Two Pieces to Puzzle</option>
+                        <option value="../Underwear/Two piece.jpg">Twos and Blues</option>
+                    </select>
+                    <label for="category">Category:</label>
+                    <select id="category" name="category" required>
+                        <option placeholder="" disabled selected hidden>Select</option>
+                        <option value="Bags">Bags</option>
+                        <option value="Cosmetics">Cosmetics</option>
+                        <option value="Perfumes">Perfumes</option>
+                        <option value="Underwear">Underwear</option>
+                    </select>
+                    <label for="value">Value R:</label>
+                    <input type="number" id="value" required>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
+              <button type="button" id="submit" class="btn btn-outline-success">Add</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
 
 
     <footer>
@@ -70,5 +165,6 @@ All Rights Reserved
         </p>
     </footer>
     <script src="../js/data.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>
 </html>

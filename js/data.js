@@ -1,6 +1,4 @@
-let table = []
-let products = JSON.parse(localStorage.getItem('products ')) ?
-JSON.parse(localStorage.getItem('products ')) : [
+let productsList = [
     {
         id: 1,
         name: "Toilet's Secrets",
@@ -37,199 +35,230 @@ JSON.parse(localStorage.getItem('products ')) : [
         image: "../Bags/VS Bags.jpg"
     },
     {
-        id: 232,
+        id: 6,
         name: "I'm Shy",
         category: "Cosmetics",
         value: 150,
         image: "../Cosmetics/Blush.jpg"
     },
     {
-        id: 235,
+        id: 7,
         name: "In the Shadows",
         category: "Cosmetics",
         value: 500,
         image: "../Cosmetics/Eye Shadow.jfif"
     },{
-        id: 237,
+        id: 8,
         name: "My Lash",
         category: "Cosmetics",
         value: 190,
         image: "../Cosmetics/eyelashes.jfif"
     },{
-        id: 233,
+        id: 9,
         name: "Kit Kat",
         category: "Cosmetics",
         value: 600,
         image: "../Cosmetics/makeup kit.jfif"
     },{
-        id: 239,
+        id: 10,
         name: "Eyelines",
         category: "Cosmetics",
         value: 100,
         image: "../Cosmetics/Mascara.jfif"
     },
     {
-        id: 230,
+        id: 11,
         name: "I Smell Like a Queen",
         category: "Cosmetics",
         value: 470,
         image: "../Cosmetics/phagrance.jpeg"
     },
     {
-        id: 229,
+        id: 12,
         name: "Pink Secret",
         category: "Cosmetics",
         value: 340,
         image: "../Cosmetics/Pink secret.jpg"
     },
     {
-        id: 225,
+        id: 13,
         name: "Soft Skin",
         category: "Cosmetics",
         value: 100,
         image: "../Cosmetics/pure lotion.jpg"
     },
     {
-        id: 222,
+        id: 14,
         name: "Shhhhhh",
         category: "Cosmetics",
         value: 170,
         image: "../Cosmetics/Scandalous.jpg"
     },
     {
-        id: 221,
+        id: 15,
         name: "Stick with me",
         category: "Cosmetics",
         value: 125,
         image: "../Cosmetics/Velvel Matte.jpg"
     },
     {
-        id: 50,
+        id: 16,
         name: "Bombshell Forever",
         category: "Perfumes",
         value: 400,
         image: "../Perfumes/Bombshell Forever.jpeg"
     },
     {
-        id: 51,
+        id: 17,
         name: "Bombshell Intense",
         category: "Perfumes",
         value: 420,
         image: "../Perfumes/Bombshell Intense.jpg"
     },
     {
-        id: 52,
+        id: 18,
         name: "Bombshell Forever",
         category: "Perfumes",
         value: 410,
         image: "../Perfumes/Bombshell Passion.jpg"
     },
     {
-        id: 53,
+        id: 19,
         name: "Love Spell",
         category: "Perfumes",
         value: 320,
         image: "../Perfumes/Love Spell.jfif"
     },
     {
-        id: 54,
+        id: 20,
         name: "Very Sexy",
         category: "Perfumes",
         value: 270,
         image: "../Perfumes/Very Sexy.jpg"
     },
     {
-        id: 55,
+        id: 21,
         name: "Violet Lily",
         category: "Perfumes",
         value: 300,
         image: "../Perfumes/Violet lily.jpg"
     },
     {
-        id: 1234,
+        id: 22,
         name: "Carribean",
         category: "Underwear",
         value: 1200,
         image: "../Underwear/carribean.jpg"
     },
     {
-        id: 1235,
+        id: 23,
         name: "Vickie",
         category: "Underwear",
         value: 1600,
         image: "../Underwear/Elle.jpg"
     },
     {
-        id: 1236,
+        id: 24,
         name: "One Step Closer",
         category: "Underwear",
         value: 2000,
         image: "../Underwear/red velvet.jpg"
     },
     {
-        id: 1237,
+        id: 25,
         name: "Snowfall",
         category: "Underwear",
         value: 1900,
         image: "../Underwear/Snow.jpg"
     },
     {
-        id: 1238,
+        id: 26,
         name: "Two Pieces to Puzzle",
         category: "Underwear",
         value: 2100,
         image: "../Underwear/Two piece snow.jpg"
     },
     {
-        id: 1239,
+        id: 27,
         name: "Twos and Blues",
         category: "Underwear",
         value: 2050,
         image: "../Underwear/Two piece.jpg"
-    },
+    }
 ]
+
+localStorage.setItem("theProducts", JSON.stringify(productsList))
+let products = JSON.parse(localStorage.getItem("theProducts"))
 
 function tableContent() {
     let tbody = document.querySelector('tbody');
-    Object.keys(products).forEach( (item)=>{
-        if(products.length){
-            console.log(`${item}: ${products[item]}`);
+    products.forEach( (item)=>{
             tbody.innerHTML +=
             `
                 <tr>
-                    <td>${products[item].id}</td>
-                    <td>${products[item].name}</td>
-                    <td>${products[item].category}</td>
-                    <td>${products[item].value}</td>
-                    <td><button type="button" class="btn btn-danger">Delete</button></td>
-                    <td class="clear"><button type="button" class="btn btn-success">Edit</button></td>
+                    <td>${item.id}</td>
+                    <td>${item.name}</td>
+                    <td>${item.category}</td>
+                    <td>${item.value}</td>
+                    <td><button type="button" id="${item.id}" class="clear btn btn-danger">Delete</button></td>
+                    <td><button type="button" class="edit btn btn-success">Edit</button></td>
                 </tr>
             `
         }
-    } )
+    )
 }
 
 tableContent()
 
-let clear = document.querySelector(".clear")
-
-clear.addEventListener('click', (e)=>{
-    e.preventDefault()
-    console.table(
-        JSON.parse(localStorage.getItem('data'))
-    )
+let clear = document.querySelectorAll(".clear")
+clear.forEach(btn=>{
+    btn.addEventListener('click', (e)=>{
+        e.preventDefault()
+        let no1 = (btn.id)
+        dlt(no1)
+    })
 })
 
-function displayProducts(){
-    products.forEach((record)=>{
-        wrapper.innerHTML += `
-        <div class="card">
-            <img src="${record.picture.large}" class="card-img-top" alt="$      {record.name.first}">
-            <div class="card-body">
-                <h5 class="card-title">${record.name.title} ${record.name.first} ${record.name.last}</h5>
-                <p class="card-text">Gender: ${record.gender} and am ${record.dob.age} years old</p>
-            </div>
-        </div>
-        `
+function dlt(no2) {
+    products.splice((no2-1),1)
+    for(i = 0; i < products.length; i++){
+        products[i].id = i + 1
+    }
+    localStorage.setItem("theProducts", JSON.stringify(products))
+}
+
+let addStuff = document.querySelector('#submit')
+
+addStuff.addEventListener('click', (e)=>{
+    e.preventDefault()
+    let category = document.querySelector('#category').value
+    let url = document.querySelector('#url')
+    let name = document.querySelector('#productName').value
+    let value = document.querySelector('#value').value
+
+    products.push({
+        id: products.length +1,
+        name ,
+        url,
+        category ,
+        value
     })
+    localStorage.setItem("theProducts", JSON.stringify(products))
+})
+
+let edit = document.querySelectorAll()
+clear.forEach(btn=>{
+    btn.addEventListener('click', (e)=>{
+        e.preventDefault()
+        let no1 = (btn.id)
+        dlt(no1)
+    })
+})
+
+function dlt(no2) {
+    products.splice((no2-1),1)
+    for(i = 0; i < products.length; i++){
+        products[i].id = i + 1
+    }
+    localStorage.setItem("theProducts", JSON.stringify(products))
 }
