@@ -245,20 +245,3 @@ addStuff.addEventListener('click', (e)=>{
     })
     localStorage.setItem("theProducts", JSON.stringify(products))
 })
-
-let edit = document.querySelectorAll()
-clear.forEach(btn=>{
-    btn.addEventListener('click', (e)=>{
-        e.preventDefault()
-        let no1 = (btn.id)
-        dlt(no1)
-    })
-})
-
-function dlt(no2) {
-    products.splice((no2-1),1)
-    for(i = 0; i < products.length; i++){
-        products[i].id = i + 1
-    }
-    localStorage.setItem("theProducts", JSON.stringify(products))
-}

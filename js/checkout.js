@@ -1,6 +1,7 @@
 let checkout = JSON.parse(localStorage.getItem("addProducts"))
 
 function displayCheckProducts(){
+    document.querySelector('.adds').innerHTML = "" 
     checkout.forEach((item)=>{
         document.querySelector('.adds').innerHTML += 
         `<div class="col-3 p-5">
